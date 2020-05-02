@@ -1,12 +1,14 @@
 var express = require('express')
 var bodyParser = require('body-parser');
 var booksRoute = require('./routes/books.route');
+var usersRoute = require('./routes/users.route');
 
 var app = express();
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use('/books', booksRoute);
+app.use('/users', usersRoute);
 
 app.set('view engine', 'pug');
 app.set('views', './views');

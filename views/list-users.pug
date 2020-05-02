@@ -1,0 +1,8 @@
+h1 List user
+ul
+		each user in users
+			li='name: '+user.title
+			a(href="/users/"+user.id+"/delete" ) Delete-user
+			
+
+a(href="/users/add-user") Add more user
