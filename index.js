@@ -18,42 +18,42 @@ app.set('views', './views');
 db.defaults({ list: [] })
   .write() 
 
-app.get('/', function(req,res){
+app.get('/books/', function(req,res){
 	res.render("list", {
 		list: db.get("list").value()
 	});
 })
 
-app.get('/add', function( req, res){
+app.get('/books/add', function( req, res){
 	res.render('add')
 })
 
-app.get('/:id/delete', function (req, res) {
+app.get('/books/:id/delete', function (req, res) {
   var id = req.params.id;
   db.get('list').remove({ id: id }).write();
-  res.redirect('/');
+  res.redirect('/books');
 })
 
-app.get('/:id/update', function( req, res){
+app.get('/books/:id/update', function( req, res){
 	res.render('update');
 	var id = req.params.id;
 
-	app.post('/views/update', function(req, res){
+	app.post('/books/update', function(req, res){
 		var newTitle = req.body.update;
  		db.get("list")
       		.find({ id: id })
      		.assign({ title: newTitle })
       		.write();
-      	res.redirect("/");
+      	res.redirect("/books");
  	
 	})
 
 })
 
-app.post('/views/add', function(req, res){
+app.post('/books/add', function(req, res){
 	req.body.id = shortid.generate();
  	db.get('list').push(req.body).write();
- 	res.redirect("/");
+ 	res.redirect("/books");
 })
 
 

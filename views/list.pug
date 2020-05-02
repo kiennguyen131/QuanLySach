@@ -2,9 +2,9 @@ h1 List book
 ul
 		each book in list
 			li='title: '+book.title
-			a(href="/"+book.id+"/delete" ) Delete
+			a(href="/books/"+book.id+"/delete" ) Delete
 			span &nbsp
-			a(href="/"+book.id+"/update" ) Update
+			a(href="/books/"+book.id+"/update" ) Update
 			
 
-a(href="/add") Add more book
+a(href="/books/add") Add more book
