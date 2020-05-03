@@ -1,17 +1,23 @@
-var express = require('express')
-var bodyParser = require('body-parser');
-var booksRoute = require('./routes/books.route');
-var usersRoute = require('./routes/users.route');
+const express = require("express");
+const bodyParser = require("body-parser");
 
-var app = express();
+const booksRoute = require("./routes/books.route.js");
+const usersRoute = require("./routes/users.route.js");
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use('/books', booksRoute);
-app.use('/users', usersRoute);
+const app = express();
 
-app.set('view engine', 'pug');
-app.set('views', './views');
+app.set("view engine", "pug");
+app.set("views", "./views");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.use("/books", booksRoute);
+app.use("/users", usersRoute);
 
 app.listen(3000, () => console.log(`Example app listening at http://localhost:3000`))
 

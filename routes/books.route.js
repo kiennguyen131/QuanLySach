@@ -1,44 +1,51 @@
-var express = require('express');
-var db = require('../db');
-var shortid = require('shortid');
+const express = require("express");
+const shortid = require("shortid");
 
-var router = express.Router();
+const db = require("../db.js");
 
-router.get('/', function(req,res){
-	res.render("list", {
-		list: db.get("list").value()
-	});
-})
+const router = express.Router();
 
-router.get('/add', function( req, res){
-	res.render('add')
-})
+router.get("/", (req, res) => {
+  res.render("books/index", {
+    books: db.get("books").value()
+  });
+});
 
-router.get('/:id/delete', function (req, res) {
-  var id = req.params.id;
-  db.get('list').remove({ id: id }).write();
-  res.redirect('/books');
-})
+router.post("/", (req, res) => {
+  req.body.id = shortid.generate();
 
-router.get('/:id/update', function( req, res){
-	res.render('update');
-	var id = req.params.id;
+  db.get("books")
+    .push(req.body)
+    .write();
+  res.redirect("back");
+});
 
-	router.post('/update', function(req, res){
-		var newTitle = req.body.update;
- 		db.get("list")
-      		.find({ id: id })
-     		.assign({ title: newTitle })
-      		.write();
-      	res.redirect("/books");
- 	
-	})
-})
+router.get("/:id/delete", (req, res) => {
+  let id = req.params.id;
 
-router.post('/add', function(req, res){
-	req.body.id = shortid.generate();
- 	db.get('list').push(req.body).write();
- 	res.redirect("/books");
-})
+  db.get("books")
+    .remove({ id: id })
+    .write();
+
+  res.redirect("back");
+});
+
+router.get("/:id/update", (req, res) => {
+  let id = req.params.id;
+  res.render("books/update-title", {
+    id: id
+  });
+});
+
+router.post("/update", (req, res) => {
+  db.get("books")
+    .find({ id: req.body.id })
+    .assign({ title: req.body.title })
+    .write();
+
+  res.redirect("/books");
+});
+
+
 
 module.exports = router;

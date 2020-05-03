@@ -1,53 +1,50 @@
-var express = require('express');
-var db = require('../db');
-var shortid = require('shortid');
+const express = require("express");
+const shortid = require("shortid");
 
-var router = express.Router();
+const db = require("../db.js");
 
-router.get('/', function(req,res){
-	res.render("list-users", {
-		users: db.get("users").value()
-	});
-})
+const router = express.Router();
 
-router.get('/add-user', function( req, res){
-	res.render('add-user')
-})
+router.get("/", (req, res) => {
+  res.render("users/index", {
+    users: db.get("users").value()
+  });
+});
 
-router.get('/:id/delete', function (req, res) {
-  var id = req.params.id;
-  db.get('users').remove({ id: id }).write();
-  res.redirect('/users');
-})
+router.get("/:id/delete", (req, res) => {
+  let id = req.params.id;
 
+  db.get("users")
+    .remove({ id: id })
+    .write();
 
+  res.redirect("back");
+});
 
+router.get("/:id/update", (req, res) => {
+  let id = req.params.id;
+  res.render("users/update-name", {
+    id: id
+  });
+});
 
-router.post('/add-user', function(req, res){
-	req.body.id = shortid.generate();
- 	db.get('users').push(req.body).write();
- 	res.redirect("/users");
-})
+router.post("/update", (req, res) => {
+  db.get("users")
+    .find({ id: req.body.id })
+    .assign({ name: req.body.name })
+    .write();
 
+  res.redirect("/users");
+});
 
+router.post("/", (req, res) => {
+  req.body.id = shortid.generate();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  db.get("users")
+    .push(req.body)
+    .write();
+  res.redirect("back");
+});
 
 
 
