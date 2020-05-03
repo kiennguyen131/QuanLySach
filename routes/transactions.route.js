@@ -1,78 +1,14 @@
 const express = require("express");
-const shortid = require("shortid");
-
-const db = require("../db.js");
+var controller = require("../controllers/transactions.controller");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("transactions/index", {
-  	transactions: db.get("transactions").value(),
+router.get("/", controller.index);
 
-    
-  });
-});
+router.get("/:id/delete", controller.delete);
 
-router.get("/:id/delete", (req, res) => {
-  let id = req.params.id;
-  db.get("transactions")
-    .remove({ id: id })
-    .write();
+router.get("/create", controller.create);
 
-  res.redirect("back");
-});
-
-router.get("/create", (req, res) => {
-  res.render("transactions/create", {
-    users: db.get("users").value(),
-    books: db.get("books").value()
-  });
-});
-
-router.post("/create", (req, res) => {
-  let user = db
-    .get("users")
-    .find({ id: req.body.userId })
-    .value();
-  let book = db
-    .get("books")
-    .find({ id: req.body.bookId })
-    .value();
-  let transaction = {
-    id: shortid.generate(),
-    bookId: book.id,
-    userId: user.id,
-    content: `${user.name} got ${book.title}.`
-  };
-  db.get("transactions")
-    .push(transaction)
-    .write();
-  res.redirect("/transactions");
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+router.post("/create", controller.postCreate);
 
 module.exports = router;
