@@ -1,59 +1,16 @@
 const express = require("express");
-const shortid = require("shortid");
-
-const db = require("../db.js");
+var controller = require("../controllers/users.controller");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("users/index", {
-    users: db.get("users").value()
-  });
-});
+router.get("/", controller.index);
 
-router.get("/:id/delete", (req, res) => {
-  let id = req.params.id;
+router.get("/:id/delete", controller.delete);
 
-  db.get("users")
-    .remove({ id: id })
-    .write();
+router.get("/:id/update", controller.update);
 
-  res.redirect("back");
-});
+router.post("/update", controller.postUpdate);
 
-router.get("/:id/update", (req, res) => {
-  let id = req.params.id;
-  res.render("users/update-name", {
-    id: id
-  });
-});
-
-router.post("/update", (req, res) => {
-  db.get("users")
-    .find({ id: req.body.id })
-    .assign({ name: req.body.name })
-    .write();
-
-  res.redirect("/users");
-});
-
-router.post("/", (req, res) => {
-  req.body.id = shortid.generate();
-
-  db.get("users")
-    .push(req.body)
-    .write();
-  res.redirect("back");
-});
-
-
-
-
-
-
-
-
-
-
+router.post("/", controller.postIndex);
 
 module.exports = router;
