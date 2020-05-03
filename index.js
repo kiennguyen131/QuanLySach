@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 
 const booksRoute = require("./routes/books.route.js");
 const usersRoute = require("./routes/users.route.js");
+const transactionsRoute = require("./routes/transactions.route.js");
+
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/books", booksRoute);
 app.use("/users", usersRoute);
+app.use("/transactions", transactionsRoute);
 
 app.listen(3000, () => console.log(`Example app listening at http://localhost:3000`))
 

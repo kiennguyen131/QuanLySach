@@ -1,0 +1,9 @@
+h1 List trans
+ul
+		each trans in transactions
+			li=trans.content
+			a(href="/transactions/"+trans.id+"/delete" ) Delete
+
+
+a(href='/transactions/create') Create more transaction
+

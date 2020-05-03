@@ -11,15 +11,6 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  req.body.id = shortid.generate();
-
-  db.get("books")
-    .push(req.body)
-    .write();
-  res.redirect("back");
-});
-
 router.get("/:id/delete", (req, res) => {
   let id = req.params.id;
 
@@ -44,6 +35,15 @@ router.post("/update", (req, res) => {
     .write();
 
   res.redirect("/books");
+});
+
+router.post("/", (req, res) => {
+  req.body.id = shortid.generate();
+
+  db.get("books")
+    .push(req.body)
+    .write();
+  res.redirect("back");
 });
 
 
