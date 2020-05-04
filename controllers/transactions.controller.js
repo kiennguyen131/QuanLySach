@@ -16,6 +16,15 @@ module.exports.delete = (req, res) => {
   res.redirect("back");
 };
 
+module.exports.isComplete = (req, res) => {
+  let id = req.params.id;
+  db.get("transactions")
+    .find({ id: id })
+    .assign({ isComplete: true })
+    .write();
+  res.redirect("back");
+}
+
 module.exports.create = (req, res) => {
   res.render("transactions/create", {
     users: db.get("users").value(),
@@ -34,6 +43,7 @@ module.exports.postCreate = (req, res) => {
     .value();
   let transaction = {
     id: shortid.generate(),
+    isComplete: false,
     bookId: book.id,
     userId: user.id,
     content: `${user.name} got ${book.title}.`

@@ -1,7 +1,9 @@
 h1 List trans
 ul
 		each trans in transactions
-			li=trans.content
+			li=trans.content+"--Complete ?: "+trans.isComplete
+			a(href="/transactions/"+trans.id+"/complete" ) Complete
+			span &nbsp
 			a(href="/transactions/"+trans.id+"/delete" ) Delete
 
 

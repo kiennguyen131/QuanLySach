@@ -7,6 +7,8 @@ router.get("/", controller.index);
 
 router.get("/:id/delete", controller.delete);
 
+router.get("/:id/complete", controller.isComplete);
+
 router.get("/create", controller.create);
 
 router.post("/create", controller.postCreate);
