@@ -2,16 +2,22 @@ extends ../layouts/common
 
 block content
 	h1 List user
-	ul
-			each user in users
-				li='name: '+user.name+" - "+'ID: '+user.id
-				a(href="/users/"+user.id+"/delete" ) Delete
-				span &nbsp
-				a(href="/users/"+user.id+"/update" ) Update
+	table.table
+		tr 
+			th Name
+			th ID
+			th(colspan='2') Action
+		each user in users
+			tr
+				td= user.name
+				td= user.id
+				td
+					a.btn.btn-light(href="/users/"+user.id+"/delete" ) Delete
+				td
+					a.btn.btn-light(href="/users/"+user.id+"/update" ) Update
 
 	h1 Add user
-	form(method="post")
-		lavel Create user:
-		input(type="text", name="name")
-
-		button Add
+		form(method="post")
+			.d-flex
+				input(type="text", name="name", class="form-control")
+				button(class="btn btn-primary ml-2") Add

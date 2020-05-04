@@ -23,7 +23,7 @@
   ],
   "users": [
     {
-      "name": "nam",
+      "name": "Nam",
       "id": "Z6eaXAKqb"
     },
     {
@@ -39,14 +39,18 @@
       "id": "VqOK0pEis"
     },
     {
-      "name": "thang",
+      "name": "Thang",
       "id": "2bHFco645"
+    },
+    {
+      "name": "Hoa",
+      "id": "ayanSKhA5"
     }
   ],
   "transactions": [
     {
       "id": "VzHOZZYMw",
-      "isComplete": false,
+      "isComplete": true,
       "bookId": "7YNJS0pMa",
       "userId": "VqOK0pEis",
       "content": "Hung got toi thay hoa vang tren co xanh."
