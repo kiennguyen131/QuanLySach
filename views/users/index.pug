@@ -1,14 +1,17 @@
-h1 List user
-ul
-		each user in users
-			li='name: '+user.name+" - "+'ID: '+user.id
-			a(href="/users/"+user.id+"/delete" ) Delete
-			span &nbsp
-			a(href="/users/"+user.id+"/update" ) Update
+extends ../layouts/common
 
-h1 Add user
-form(method="post")
-	lavel Create user:
-	input(type="text", name="name")
+block content
+	h1 List user
+	ul
+			each user in users
+				li='name: '+user.name+" - "+'ID: '+user.id
+				a(href="/users/"+user.id+"/delete" ) Delete
+				span &nbsp
+				a(href="/users/"+user.id+"/update" ) Update
 
-	button Add
+	h1 Add user
+	form(method="post")
+		lavel Create user:
+		input(type="text", name="name")
+
+		button Add

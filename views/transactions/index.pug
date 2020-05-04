@@ -1,11 +1,14 @@
-h1 List trans
-ul
-		each trans in transactions
-			li=trans.content+"-Complete? : "+trans.isComplete
-			a(href="/transactions/"+trans.id+"/complete" ) Complete
-			span &nbsp
-			a(href="/transactions/"+trans.id+"/delete" ) Delete
+extends ../layouts/common
+
+block content
+	h1 List trans
+	ul
+			each trans in transactions
+				li=trans.content+"-Complete? : "+trans.isComplete
+				a(href="/transactions/"+trans.id+"/complete" ) Complete
+				span &nbsp
+				a(href="/transactions/"+trans.id+"/delete" ) Delete
 
 
-a(href='/transactions/create') Create more transaction
+	a(href='/transactions/create') Create more transaction
 

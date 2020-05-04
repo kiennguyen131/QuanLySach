@@ -1,16 +1,19 @@
-h3 Create transaction
-form(action='', method='post')
-  
-  label(for='user') User-name:
-  select( name='userId')
-    each user in users
-      option(value=user.id)= user.name
+extends ../layouts/common
 
-  label(for='book') Book-title:
-  span &nbsp
-  select(name='bookId')
-    each book in books
-      option(value=book.id)= book.title
+block content
+  h3 Create transaction
+  form(action='', method='post')
+    
+    label(for='user') User-name:
+    select( name='userId')
+      each user in users
+        option(value=user.id)= user.name
 
-  br
-  button Create
+    label(for='book') Book-title:
+    span &nbsp
+    select(name='bookId')
+      each book in books
+        option(value=book.id)= book.title
+
+    br
+    button Create

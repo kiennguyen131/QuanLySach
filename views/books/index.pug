@@ -1,16 +1,19 @@
-h1 List book
-ul
-		each book in books
-			li='Title: '+book.title+" - "+'Description: '+book.description
-			a(href="/books/"+book.id+"/delete" ) Delete
-			span &nbsp
-			a(href="/books/"+book.id+"/update" ) Update
+extends ../layouts/common
 
-h1 Add book
-form(method="post")
-	lavel Title:
-	input(type="text", name="title")
-	lavel Description
-	input(type="text", name="description")
+block content
+	h1 List book
+	ul
+			each book in books
+				li='Title: '+book.title+" - "+'Description: '+book.description
+				a(href="/books/"+book.id+"/delete" ) Delete
+				span &nbsp
+				a(href="/books/"+book.id+"/update" ) Update
 
-	button Add
+	h1 Add book
+	form(method="post")
+		lavel Title:
+		input(type="text", name="title")
+		lavel Description
+		input(type="text", name="description")
+
+		button Add

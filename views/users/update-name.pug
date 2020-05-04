@@ -1,7 +1,10 @@
-h2 Update title
-form(action="/users/update", method="POST")
-  lable New name:
-  br
-  input(type="hidden", name="id", value=id)
-  input(type="text", name="name")
-  button Update
+extends ../layouts/common
+
+block content
+	h2 Update title
+	form(action="/users/update", method="POST")
+	  lable New name:
+	  br
+	  input(type="hidden", name="id", value=id)
+	  input(type="text", name="name")
+	  button Update
