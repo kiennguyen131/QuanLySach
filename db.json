@@ -44,22 +44,15 @@
   ],
   "transactions": [
     {
-      "id": "VzHOZZYMw",
-      "isComplete": true,
-      "bookId": "7YNJS0pMa",
-      "userId": "VqOK0pEis",
-      "content": "Hung got toi thay hoa vang tren co xanh."
-    },
-    {
       "id": "1nNTaco62",
-      "isComplete": false,
+      "isComplete": true,
       "bookId": "5N3s9zdeb",
       "userId": "2bHFco645",
       "content": "thang got you don't know js."
     },
     {
       "id": "Fwtkv6pNS",
-      "isComplete": false,
+      "isComplete": true,
       "bookId": "7YNJS0pMa",
       "userId": "Z6eaXAKqb",
       "content": "nam got toi thay hoa vang tren co xanh."

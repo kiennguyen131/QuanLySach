@@ -2,13 +2,20 @@ extends ../layouts/common
 
 block content
 	h1 List trans
-	ul
-			each trans in transactions
-				li=trans.content+"-Complete? : "+trans.isComplete
-				a(href="/transactions/"+trans.id+"/complete" ) Complete
-				span &nbsp
-				a(href="/transactions/"+trans.id+"/delete" ) Delete
+	table.table
+		tr
+			th Status
+			th Complete
+			th(colspan='2') Action
+		each trans in transactions
+			tr
+				td= trans.content
+				td= trans.isComplete
+				td
+					a.btn.btn-light(href="/transactions/"+trans.id+"/complete" ) Complete
+				td
+					a.btn.btn-light(href="/transactions/"+trans.id+"/delete" ) Delete
 
 
-	a(href='/transactions/create') Create more transaction
+	a.btn.btn-light(href='/transactions/create') Create more transaction
 
