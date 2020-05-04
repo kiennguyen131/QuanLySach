@@ -8,6 +8,8 @@ const transactionsRoute = require("./routes/transactions.route.js");
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.set("view engine", "pug");
 app.set("views", "./views");
 
@@ -22,5 +24,5 @@ app.use("/books", booksRoute);
 app.use("/users", usersRoute);
 app.use("/transactions", transactionsRoute);
 
-app.listen(3000, () => console.log(`Example app listening at http://localhost:3000`))
+app.listen(4000, () => console.log(`Example app listening at http://localhost:4000`))
 
