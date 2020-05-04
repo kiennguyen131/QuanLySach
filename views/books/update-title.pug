@@ -3,8 +3,8 @@ extends ../layouts/common
 block content
 	h2 Update title
 	form(action="/books/update", method="POST")
-		lable New title:
-		br
-		input(type="hidden", name="id", value=id)
-		input(type="text", name="title")
-		button Update
+			input(type="hidden", name="id", value=id)
+			.input-group.mb-3
+			.d-flex
+				input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='basic-addon1', name="title")
+				button(class="btn btn-primary ml-2") Update

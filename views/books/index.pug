@@ -2,18 +2,28 @@ extends ../layouts/common
 
 block content
 	h1 List book
-	ul
-			each book in books
-				li='Title: '+book.title+" - "+'Description: '+book.description
-				a(href="/books/"+book.id+"/delete" ) Delete
-				span &nbsp
-				a(href="/books/"+book.id+"/update" ) Update
+	table.table
+		tr
+			th Title
+			th Description
+			th(colspan='2') Action
+		each book in books
+			tr
+				td= book.title
+				td= book.description
+				td
+					a.btn.btn-light(href="/books/"+book.id+"/delete" ) Delete
+				td
+					a.btn.btn-light(href="/books/"+book.id+"/update" ) Update
 
 	h1 Add book
 	form(method="post")
-		lavel Title:
-		input(type="text", name="title")
-		lavel Description
-		input(type="text", name="description")
-
-		button Add
+		.input-group.mb-3
+			.input-group-prepend
+				span#basic-addon1.input-group-text 1
+			input.form-control(type='text', placeholder='New title', aria-label='Username', aria-describedby='basic-addon1', name="title")
+		.input-group.mb-3
+			.input-group-prepend
+				span#basic-addon1.input-group-text 2
+			input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='basic-addon1', name="description")
+		button(class="btn btn-primary ml-2") Add

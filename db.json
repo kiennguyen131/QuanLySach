@@ -1,12 +1,7 @@
 {
   "books": [
     {
-      "title": "Clean code",
-      "description": "about code",
-      "id": "433U0zTaP"
-    },
-    {
-      "title": "you don't know js",
+      "title": "now you know",
       "description": "about js",
       "id": "5N3s9zdeb"
     },
@@ -16,9 +11,9 @@
       "id": "7YNJS0pMa"
     },
     {
-      "title": "Sach giao khoa",
-      "description": "Cap 1",
-      "id": "pOAYUMoUR"
+      "title": "code clean",
+      "description": "about code",
+      "id": "iTtJnGCpE"
     }
   ],
   "users": [
