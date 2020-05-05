@@ -9,8 +9,10 @@ router.get("/:id/delete", controller.delete);
 
 router.get("/:id/update", controller.update);
 
+router.get("/add-user", controller.addUser);
+
 router.post("/update", controller.postUpdate);
 
-router.post("/", controller.postIndex);
+router.post("/add-user", controller.postAddUser);
 
 module.exports = router;

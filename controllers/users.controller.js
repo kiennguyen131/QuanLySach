@@ -23,6 +23,10 @@ module.exports.update = (req, res) => {
   });
 };
 
+module.exports.addUser = (req, res) => {
+  res.render("users/add-user");
+};
+
 module.exports.postUpdate = (req, res) => {
   db.get("users")
     .find({ id: req.body.id })
@@ -32,11 +36,11 @@ module.exports.postUpdate = (req, res) => {
   res.redirect("/users");
 };
 
-module.exports.postIndex = (req, res) => {
+module.exports.postAddUser = (req, res) => {
   req.body.id = shortid.generate();
-
   db.get("users")
     .push(req.body)
     .write();
-  res.redirect("back");
+  res.redirect("/users");
 };
+
