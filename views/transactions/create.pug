@@ -2,20 +2,19 @@ extends ../layouts/common
 
 block content
   h3 Create transaction
-  form(action='', method='post')
+  form.mt-3(action='', method='post')
     
-    label(for='user') User-name:
+    label(for='user') User name : 
     select( name='userId')
       each user in users
         option(value=user.id)= user.name
-
-    label(for='book') Book-title:
     span &nbsp
+    label(for='book') Book title :
     select(name='bookId')
       each book in books
         option(value=book.id)= book.title
 
-    button Create
+  button(class="btn btn-primary ") Create
 
 
 
