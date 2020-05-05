@@ -9,8 +9,10 @@ router.get("/:id/delete", controller.delete);
 
 router.get("/:id/update", controller.update);
 
+router.get("/add-book", controller.addBook);
+
 router.post("/update", controller.postUpdate);
 
-router.post("/", controller.postIndex);
+router.post("/add-book", controller.postAddBook);
 
 module.exports = router;

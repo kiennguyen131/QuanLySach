@@ -1,6 +1,8 @@
 extends ../layouts/common
 
 block content
+	a.mb-5(class="btn btn-primary ", href='/transactions/create') Create more transaction
+
 	h1 List trans
 	table.table
 		tr
@@ -17,5 +19,4 @@ block content
 					a.btn.btn-light(href="/transactions/"+trans.id+"/delete" ) Delete
 
 
-	a(class="btn btn-primary ", href='/transactions/create') Create more transaction
-
+	

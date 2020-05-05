@@ -24,6 +24,11 @@ module.exports.update = (req, res) => {
   });
 };
 
+module.exports.addBook = (req, res) => {
+  res.render("books/add-book");
+};
+
+
 module.exports.postUpdate = (req, res) => {
   db.get("books")
     .find({ id: req.body.id })
@@ -33,11 +38,11 @@ module.exports.postUpdate = (req, res) => {
   res.redirect("/books");
 };
 
-module.exports.postIndex = (req, res) => {
+module.exports.postAddBook = (req, res) => {
   req.body.id = shortid.generate();
 
   db.get("books")
     .push(req.body)
     .write();
-  res.redirect("back");
+  res.redirect("/books");
 };

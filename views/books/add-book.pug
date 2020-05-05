@@ -1,0 +1,15 @@
+extends ../layouts/common
+
+block content
+
+	h1 Add book
+	form(method="post")
+		.input-group.mb-3
+			.input-group-prepend
+				span#basic-addon1.input-group-text 1
+			input.form-control(type='text', placeholder='New title', aria-label='Username', aria-describedby='basic-addon1', name="title")
+		.input-group.mb-3
+			.input-group-prepend
+				span#basic-addon1.input-group-text 2
+			input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='basic-addon1', name="description")
+		button(class="btn btn-primary ") Add
