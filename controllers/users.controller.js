@@ -38,6 +38,23 @@ module.exports.postUpdate = (req, res) => {
 
 module.exports.postAddUser = (req, res) => {
   req.body.id = shortid.generate();
+
+  var errors = [];
+  if(!req.body.name) {
+    errors.push('Name is required.')
+  }
+  var name = req.body.name;
+  if(name.length > 30) {
+    errors.push('Name is too long.')
+  }
+  if(errors){
+    res.render("users/add-user",{
+      errors: errors,
+      values: req.body
+    });
+    return;
+  }
+
   db.get("users")
     .push(req.body)
     .write();
