@@ -1,16 +1,6 @@
 {
   "books": [
     {
-      "title": "now you know",
-      "description": "about js",
-      "id": "5N3s9zdeb"
-    },
-    {
-      "title": "toi thay hoa vang tren co xanh",
-      "description": "Nguyen Nhat Anh",
-      "id": "7YNJS0pMa"
-    },
-    {
       "title": "code clean",
       "description": "about code",
       "id": "iTtJnGCpE"
@@ -28,42 +18,13 @@
   ],
   "users": [
     {
-      "name": "Nam",
-      "id": "Z6eaXAKqb",
-      "email": "c@gmail.com",
-      "password": "123456"
-    },
-    {
-      "name": "Quang",
-      "id": "n69MFspEA",
-      "email": "b@gmail.com",
-      "password": "123456"
-    },
-    {
       "name": "Kien",
-      "id": "w_ruLjOsh"
-    },
-    {
-      "name": "Hung",
-      "id": "VqOK0pEis"
-    },
-    {
-      "name": "Thang",
-      "id": "2bHFco645"
-    },
-    {
-      "name": "Canh",
-      "id": "wZKyNHHLf"
+      "id": "w_ruLjOsh",
+      "email": "a@gmail.com",
+      "password": "123456"
     }
   ],
   "transactions": [
-    {
-      "id": "Fwtkv6pNS",
-      "isComplete": true,
-      "bookId": "7YNJS0pMa",
-      "userId": "Z6eaXAKqb",
-      "content": "nam got toi thay hoa vang tren co xanh."
-    },
     {
       "id": "d3Xgz8Kc3",
       "isComplete": false,
