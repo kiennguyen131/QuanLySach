@@ -47,7 +47,7 @@ module.exports.postAddUser = (req, res) => {
   if(name.length > 30) {
     errors.push('Name is too long.')
   }
-  if(errors){
+  if(errors.length > 0){
     res.render("users/add-user",{
       errors: errors,
       values: req.body

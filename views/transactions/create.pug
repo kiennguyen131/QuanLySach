@@ -4,17 +4,17 @@ block content
   h3 Create transaction
   form.mt-3(action='', method='post')
     
-    label(for='user') User name : 
-    select( name='userId')
+    label(for='user') User name :
+    select.ml-1( name='userId')
       each user in users
         option(value=user.id)= user.name
     span &nbsp
     label(for='book') Book title :
-    select(name='bookId')
+    select.ml-1(name='bookId')
       each book in books
         option(value=book.id)= book.title
 
-  button(class="btn btn-primary ") Create
+    button.ml-3(class="btn btn-primary ") Create
 
 
 
