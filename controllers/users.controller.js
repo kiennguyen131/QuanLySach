@@ -38,6 +38,8 @@ module.exports.postUpdate = (req, res) => {
 
 module.exports.postAddUser = (req, res) => {
   req.body.id = shortid.generate();
+  req.body.email = req.body.name + '@gmail.com';
+  req.body.password = '123123';
 
   db.get("users")
     .push(req.body)

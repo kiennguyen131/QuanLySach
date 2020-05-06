@@ -1,4 +1,4 @@
-module.exports.postAddUser = (req, res) => {
+module.exports.postAddUser = (req, res, next) => {
 
   var errors = [];
   if(!req.body.name) {
