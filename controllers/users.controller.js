@@ -40,6 +40,7 @@ module.exports.postAddUser = (req, res) => {
   req.body.id = shortid.generate();
   req.body.email = req.body.name + '@gmail.com';
   req.body.password = '123123';
+  req.body.isAdmin = false;
 
   db.get("users")
     .push(req.body)

@@ -26,11 +26,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.use("/books", authMiddlewar.requireAuth, booksRoute);
-app.use("/users", authMiddlewar.requireAuth, usersRoute);
+app.use("/books", authMiddlewar.requireAuth, authMiddlewar.isAdmin, booksRoute);
+app.use("/users", authMiddlewar.requireAuth, authMiddlewar.isAdmin, usersRoute);
 app.use("/transactions", authMiddlewar.requireAuth, transactionsRoute);
 app.use("/auth", authRoute);
-
+//authMiddlewar.isAdmin : xu lý truy cập admin
 
 app.listen(4000, () => console.log(`Example app listening at http://localhost:4000`))
 

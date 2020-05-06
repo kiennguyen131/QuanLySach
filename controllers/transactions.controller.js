@@ -2,9 +2,24 @@ const shortid = require("shortid");
 const db = require("../db.js");
 
 module.exports.index = (req, res) => {
-  res.render("transactions/index", {
-  	transactions: db.get("transactions").value(),    
-  });
+  var userId = req.cookies.userId;
+  var user = db.get('users').find( {id: req.cookies.userId}).value();
+
+//hiển thị tất cả với vai trò admin nhưng chỉ hiện thị sách của nguwoif dùng với vai trò người dùng 
+  if(user.isAdmin){
+    res.render("transactions/index", {
+    transactions: db.get("transactions").value(),    
+    });
+    return;
+  }
+  else {
+    var dataTransUser = db.get('transactions').filter({userId:userId}).value();
+    res.render('transactions/index',{
+      transactions : dataTransUser,
+      userId: userId
+    })
+  }
+
 };
 
 module.exports.delete = (req, res) => {
