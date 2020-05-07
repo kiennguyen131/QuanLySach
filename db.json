@@ -23,32 +23,46 @@
   ],
   "users": [
     {
+      "name": "admin",
+      "id": "vYPpSwUvl",
+      "email": "admin@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "isAdmin": true
+    },
+    {
       "name": "hoa",
-      "id": "BDMAhI9XP",
+      "id": "ZlG0ScX7E",
       "email": "hoa@gmail.com",
-      "password": "123123",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": false
     },
     {
       "name": "thang",
-      "id": "SvwrCmgUC",
+      "id": "54DFW02Gk",
       "email": "thang@gmail.com",
-      "password": "123123",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": false
     },
     {
-      "name": "thu",
-      "id": "5NvPQXIZW",
-      "email": "thu@gmail.com",
-      "password": "123123",
+      "name": "hoang",
+      "id": "DnuWXUmDR",
+      "email": "hoang@gmail.com",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": false
     },
     {
-      "name": "admin",
-      "id": "vYPpSwUvl",
-      "email": "admin@gmail.com",
-      "password": "123123",
-      "isAdmin": true
+      "name": "khuong",
+      "id": "8kM4qVVul",
+      "email": "khuong@gmail.com",
+      "password": "4297f44b13955235245b2497399d7a93",
+      "isAdmin": false
+    },
+    {
+      "name": "nam",
+      "id": "JXsXBeoHv",
+      "email": "nam@gmail.com",
+      "password": "4297f44b13955235245b2497399d7a93",
+      "isAdmin": false
     }
   ],
   "transactions": [

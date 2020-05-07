@@ -21,8 +21,6 @@ module.exports.isAdmin = (req, res, next) => {
 		next();
 	}
 
-//xử lý chỉ cho truy cập vào transaction
-
 	else {
 	 	res.redirect('/');
 		return;

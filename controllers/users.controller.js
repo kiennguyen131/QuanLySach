@@ -1,5 +1,6 @@
 const shortid = require("shortid");
 const db = require("../db.js");
+var md5 = require('md5');
 
 module.exports.index = (req, res) => {
   res.render("users/index", {
@@ -39,7 +40,7 @@ module.exports.postUpdate = (req, res) => {
 module.exports.postAddUser = (req, res) => {
   req.body.id = shortid.generate();
   req.body.email = req.body.name + '@gmail.com';
-  req.body.password = '123123';
+  req.body.password = md5('123123');
   req.body.isAdmin = false;
 
   db.get("users")
