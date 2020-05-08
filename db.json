@@ -23,90 +23,62 @@
   ],
   "users": [
     {
-      "name": "admin",
-      "id": "vYPpSwUvl",
-      "email": "admin@gmail.com",
-      "password": "e10adc3949ba59abbe56e057f20f883e",
-      "isAdmin": true
+      "name": "hoa",
+      "id": "oDknbYvSw",
+      "email": "hoa@gmail.com",
+      "isAdmin": true,
+      "password": "$2b$10$5y0ZAQux7dbvaFxwEJi0qe5OtNE6OZxJxKJv0aq3O0/DOAzz186IS"
     },
     {
-      "name": "hoa",
-      "id": "ZlG0ScX7E",
-      "email": "hoa@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
+      "name": "kien",
+      "id": "EFx_Zmo9E",
+      "email": "kien@gmail.com",
+      "password": "$2b$10$.8LbmsOmAI/fUvkTTYoYsexfD2RoSxEHNHXfJQpI6dmw/4UYPUeXO",
       "isAdmin": false
     },
     {
       "name": "thang",
-      "id": "54DFW02Gk",
+      "id": "FZFQISIHe",
       "email": "thang@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
+      "password": "$2b$10$9lz.IUmWRlqajjcAZinuq..4e9msZwZ5JyShX5V0WMPytEJ4uRDQa",
       "isAdmin": false
     },
     {
-      "name": "hoang",
-      "id": "DnuWXUmDR",
-      "email": "hoang@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
+      "name": "hung",
+      "id": "lERFkoMgz",
+      "email": "hung@gmail.com",
+      "password": "$2b$10$g7W9M8LxmLuhmGz1lLhsze/749J09U59UOq1uu10lytzCma9.6qoS",
       "isAdmin": false
     },
     {
-      "name": "khuong",
-      "id": "8kM4qVVul",
-      "email": "khuong@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
+      "name": "1",
+      "id": "-ceCXt8J0",
+      "email": "1@gmail.com",
+      "password": "$2b$10$ZUOo8wFC4HYZqQ9hzQ7g.uM.5.1nNZM5ijE91itVAJN6Z1Xl6k.ma",
       "isAdmin": false
     },
     {
-      "name": "nam",
-      "id": "JXsXBeoHv",
-      "email": "nam@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
+      "name": "2",
+      "id": "aUILVULfC",
+      "email": "2@gmail.com",
+      "password": "$2b$10$vN921SFBftZl36rtdT.EROPjN2QKAKSlAw5dOzbmOqExF.BGCfLVe",
       "isAdmin": false
     }
   ],
   "transactions": [
     {
-      "id": "BctzQlOOs",
+      "id": "VYZMCuBBu",
       "isComplete": false,
       "bookId": "iTtJnGCpE",
-      "userId": "w_ruLjOsh",
-      "content": "Kien got clean code."
-    },
-    {
-      "id": "3gpSf0RH6",
-      "isComplete": false,
-      "bookId": "iTtJnGCpE",
-      "userId": "BDMAhI9XP",
+      "userId": "oDknbYvSw",
       "content": "hoa got clean code."
     },
     {
-      "id": "lSsuo4fFq",
-      "isComplete": false,
-      "bookId": "JO1Pxd7-M",
-      "userId": "BDMAhI9XP",
-      "content": "hoa got code."
-    },
-    {
-      "id": "KkJXP4MJ8",
+      "id": "TyZHPpoEm",
       "isComplete": false,
       "bookId": "SMrywniV4",
-      "userId": "SvwrCmgUC",
-      "content": "thang got toi thay hoa vang tren co xanh."
-    },
-    {
-      "id": "8k772O5Ce",
-      "isComplete": true,
-      "bookId": "SMrywniV4",
-      "userId": "BDMAhI9XP",
-      "content": "hoa got toi thay hoa vang tren co xanh."
-    },
-    {
-      "id": "j2sEdw5aL",
-      "isComplete": false,
-      "bookId": "iTtJnGCpE",
-      "userId": "5NvPQXIZW",
-      "content": "thu got clean code."
+      "userId": "EFx_Zmo9E",
+      "content": "kien got toi thay hoa vang tren co xanh."
     }
   ]
 }

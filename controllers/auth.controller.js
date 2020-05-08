@@ -1,4 +1,6 @@
-var md5 = require('md5');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 const db = require("../db.js");
 
 module.exports.login = (req, res) => {
@@ -21,18 +23,20 @@ module.exports.postLogin = (req, res) => {
 		return;
 	}
 
-	var hashedPassword = md5(password);
-
-	if (user.password !== hashedPassword) {
-		res.render('auth/login', {
+	bcrypt.compare(password, user.password, function(err, result) {
+		if(!result){
+			res.render('auth/login', {
 			errors: [
 				'Wrong password.'
 			],
 			values: req.body
-		});
-		return;
-	}
-	res.cookie('userId', user.id);
+			});
+			return;
+		}
+		else {
+			res.cookie('userId', user.id);
+			res.redirect('/');
+		}
+	})
 
-	res.redirect('/');
 }
