@@ -49,20 +49,6 @@
       "email": "hung@gmail.com",
       "password": "$2b$10$g7W9M8LxmLuhmGz1lLhsze/749J09U59UOq1uu10lytzCma9.6qoS",
       "isAdmin": false
-    },
-    {
-      "name": "1",
-      "id": "-ceCXt8J0",
-      "email": "1@gmail.com",
-      "password": "$2b$10$ZUOo8wFC4HYZqQ9hzQ7g.uM.5.1nNZM5ijE91itVAJN6Z1Xl6k.ma",
-      "isAdmin": false
-    },
-    {
-      "name": "2",
-      "id": "aUILVULfC",
-      "email": "2@gmail.com",
-      "password": "$2b$10$vN921SFBftZl36rtdT.EROPjN2QKAKSlAw5dOzbmOqExF.BGCfLVe",
-      "isAdmin": false
     }
   ],
   "transactions": [
