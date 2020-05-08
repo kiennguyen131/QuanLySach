@@ -2,8 +2,8 @@ const shortid = require("shortid");
 const db = require("../db.js");
 
 module.exports.index = (req, res) => {
-  var userId = req.cookies.userId;
-  var user = db.get('users').find( {id: req.cookies.userId}).value();
+  var userId = req.signedCookies.userId;
+  var user = db.get('users').find( {id: req.signedCookies.userId}).value();
 
 //hiển thị tất cả với vai trò admin nhưng chỉ hiện thị sách của nguwoif dùng với vai trò người dùng 
   if(user.isAdmin){
