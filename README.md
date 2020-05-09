@@ -10,3 +10,7 @@
 
 Mã hóa bằng btrypt
 
+## Chưa làm được:
+
+1: gửi gmail cảnh báo khi bị nhập sai quá nhiều lần 
+
