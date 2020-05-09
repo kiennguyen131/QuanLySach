@@ -37,24 +37,24 @@
       "isAdmin": false
     },
     {
-      "name": "thang",
-      "id": "FZFQISIHe",
-      "email": "thang@gmail.com",
-      "password": "$2b$10$9lz.IUmWRlqajjcAZinuq..4e9msZwZ5JyShX5V0WMPytEJ4uRDQa",
-      "isAdmin": false
-    },
-    {
       "name": "hung",
       "id": "lERFkoMgz",
       "email": "hung@gmail.com",
       "password": "$2b$10$g7W9M8LxmLuhmGz1lLhsze/749J09U59UOq1uu10lytzCma9.6qoS",
+      "isAdmin": false
+    },
+    {
+      "name": "thang",
+      "id": "eEzGLFFr_",
+      "email": "thang@gmail.com",
+      "password": "$2b$10$EW/hJn6lxffjCZ.PXlYcJ.fWCmbenM017c0dH.VmxNtP.ISS8881O",
       "isAdmin": false
     }
   ],
   "transactions": [
     {
       "id": "VYZMCuBBu",
-      "isComplete": false,
+      "isComplete": true,
       "bookId": "iTtJnGCpE",
       "userId": "oDknbYvSw",
       "content": "hoa got clean code."
@@ -65,6 +65,13 @@
       "bookId": "SMrywniV4",
       "userId": "EFx_Zmo9E",
       "content": "kien got toi thay hoa vang tren co xanh."
+    },
+    {
+      "id": "EvgMT3dve",
+      "isComplete": false,
+      "bookId": "SMrywniV4",
+      "userId": "lERFkoMgz",
+      "content": "hung got toi thay hoa vang tren co xanh."
     }
   ]
 }
