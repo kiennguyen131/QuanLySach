@@ -4,8 +4,14 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 module.exports.index = (req, res) => {
+  var page = parseInt(req.query.page) || 1;
+  var perPage = 4;
+
+  var drop = (page - 1) * perPage;
+
   res.render("users/index", {
-    users: db.get("users").value()
+    users: db.get("users").drop(drop).take(perPage).value(),
+    page: page
   });
 };
 module.exports.delete = (req, res) => {

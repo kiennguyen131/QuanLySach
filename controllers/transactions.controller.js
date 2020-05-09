@@ -7,8 +7,14 @@ module.exports.index = (req, res) => {
 
 //hiển thị tất cả với vai trò admin nhưng chỉ hiện thị sách của nguwoif dùng với vai trò người dùng 
   if(user.isAdmin){
+    var page = parseInt(req.query.page) || 1;
+    var perPage = 4;
+
+    var drop = (page - 1) * perPage;
+
     res.render("transactions/index", {
-    transactions: db.get("transactions").value(),    
+      transactions: db.get("transactions").drop(drop).take(perPage).value(),  
+      page: page
     });
     return;
   }

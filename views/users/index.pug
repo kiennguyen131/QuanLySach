@@ -16,3 +16,16 @@ block content
 					a.btn.btn-light(href="/users/"+user.id+"/delete" ) Delete
 				td
 					a.btn.btn-light(href="/users/"+user.id+"/update" ) Update
+		nav(aria-label='...')
+			ul.pagination
+				li.page-item
+					a.page-link(href='/users?page='+ (page-1)) Previous
+				li.page-item
+					a.page-link(href='/users?page=' + (page-1))=page-1
+				li.page-item.active(aria-current='page')
+					span.page-link=page
+						span.sr-only (current)
+				li.page-item
+					a.page-link(href='/users?page=' + (page+1))=page+1
+				li.page-item
+					a.page-link(href='/users?page='+(page+1)) Next
