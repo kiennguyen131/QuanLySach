@@ -18,7 +18,9 @@ html
 					li.nav-item
 						a.nav-link(href='/transactions') Transactions
 			if user
-				p= user.name
+				h2= user.name
+			else 
+				a.mr-auto(class="btn btn-primary ", href="/auth/login") Login
 		.container.pt-5
 			block content
 
