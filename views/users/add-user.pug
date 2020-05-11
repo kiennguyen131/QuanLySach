@@ -6,7 +6,10 @@ block content
 			.alert.alert-danger= error
 
 	h1 Add user
-		form(method="post")
-			.d-flex
-				input(type="text", name="name", class="form-control", value=values ? values.name : '')
-				button(class="btn btn-primary ml-2") Add
+		form(method="post",action="add-user")
+			.form-group
+				label(for="name") Name
+				input#phone.form-control(type="text", name="name", class="form-control", value=values ? values.name : '')
+
+
+			button(class="btn btn-primary ml-2") Add
