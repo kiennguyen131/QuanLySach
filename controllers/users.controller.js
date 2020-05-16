@@ -8,7 +8,6 @@ module.exports.index = (req, res) => {
   var perPage = 4;
 
   var drop = (page - 1) * perPage;
-
   res.render("users/index", {
     users: db.get("users").drop(drop).take(perPage).value(),
     page: page
@@ -49,15 +48,17 @@ module.exports.postAddUser = (req, res) => {
   var name = req.body.name;
   var email = req.body.name + '@gmail.com';
   var isAdmin = false;
+  var avatar = `/uploads/${req.file.filename}`;
 
   bcrypt.hash('123123', saltRounds, function(err, hash) {
     var hash = hash;
     var newUser = {
-      name:name,
-      id: id,
-      email: email,
+      name,
+      id,
+      email,
       password: hash,
-      isAdmin: isAdmin
+      isAdmin,
+      avatar
     };
     
     db.get("users")

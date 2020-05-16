@@ -26,5 +26,4 @@ module.exports.isAdmin = (req, res, next) => {
 	 	res.redirect('/');
 		return;
 	}
-	next();
 }

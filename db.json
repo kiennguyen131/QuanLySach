@@ -35,6 +35,22 @@
       "email": "kien@gmail.com",
       "password": "$2b$10$.8LbmsOmAI/fUvkTTYoYsexfD2RoSxEHNHXfJQpI6dmw/4UYPUeXO",
       "isAdmin": false
+    },
+    {
+      "name": "ahihi",
+      "id": "5EzkaP4MY",
+      "email": "ahihi@gmail.com",
+      "password": "$2b$10$F84W.h/fW.KGiEIw8GrGBuzfFeXK1leGOROGcbYP9xqFLdciA9/YK",
+      "isAdmin": false,
+      "avatar": "/uploads/986006ca56267949bb9e958dcf23055c"
+    },
+    {
+      "name": "cuc cu",
+      "id": "WBygzWG_H",
+      "email": "cuc cu@gmail.com",
+      "password": "$2b$10$cJjePqfK1tjZVqObnQisMeOkuz7JrbCuWXcQ1Ybcng9FvkIceTUiy",
+      "isAdmin": false,
+      "avatar": "/uploads/500b95572d41ec0cee009c749d000ede"
     }
   ],
   "transactions": [
