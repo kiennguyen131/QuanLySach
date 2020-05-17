@@ -17,7 +17,9 @@ Mã hóa bằng btrypt
 
 ## Start:
  npm install
+
  npm install --save multer
+
  npm start
 
 
